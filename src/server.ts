@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 import "colorts/lib/string";
 import dotenv from "dotenv";
 import helmet from "helmet";
@@ -13,10 +13,8 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
-app.get("/", function (req: Request, res: Response) {
-  res.send("<h2>Hey ..</h2>");
-});
-
 app.listen(PORT, function () {
   console.log(`App running on port: ${PORT}`.blue.bold);
 });
+
+export default app;
